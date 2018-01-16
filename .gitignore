@@ -1,0 +1,12 @@
+# build directory
+
+build*/
+
+*.h5
+*.out
+*.log
+
+zsim.cfg
+out.cfg
+heartbeat
+.sconsign.dblite

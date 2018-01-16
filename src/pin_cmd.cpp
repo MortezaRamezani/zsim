@@ -51,6 +51,12 @@ PinCmd::PinCmd(Config* conf, const char* configFile, const char* outputDir, uint
 
     args.push_back(pinPath);
 
+    // Work around Kernel Version Check
+    args.push_back("-ifeellucky");
+    args.push_back("-mt");
+    args.push_back("-injection");
+    args.push_back("child");
+
     //Global pin options
     args.push_back("-follow_execv"); //instrument child processes
     args.push_back("-tool_exit_timeout"); //don't wait much of internal threads
@@ -171,4 +177,3 @@ void PinCmd::setEnvVars(uint32_t procIdx) {
         wordfree(&p);
     }
 }
-
