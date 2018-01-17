@@ -38,6 +38,7 @@ PF(SYS_getsockname, PatchGetsockname);
 PF(SYS_connect, PatchConnect);
 
 // CPU virtualization -- cpu.cpp
+#define SYS_getcpu (168)
 PF(SYS_getcpu, PatchGetcpu);
 PF(SYS_sched_getaffinity, PatchSchedGetaffinity);
 PF(SYS_sched_setaffinity, PatchSchedSetaffinity);
@@ -57,4 +58,3 @@ PF(SYS_futex, PatchTimeoutSyscall);
 PF(SYS_epoll_wait, PatchTimeoutSyscall);
 PF(SYS_epoll_pwait, PatchTimeoutSyscall);
 PF(SYS_poll, PatchTimeoutSyscall);
-
